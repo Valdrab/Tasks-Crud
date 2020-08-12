@@ -122,9 +122,7 @@ public class TaskControllerTestSuite {
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
-                .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.title", is("Test title")))
-                .andExpect(jsonPath("$.content", is("Test content")));
-        verify(dbService, times(1)).saveTask(any());
+                .andExpect(status().isOk());
+        verify(dbService, times(1)).saveTask(any(Task.class));
     }
 }
