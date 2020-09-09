@@ -12,4 +12,21 @@ public class AdminConfig {
 
     @Value("${admin.mail}")
     private String adminMail;
+
+    @Value("${info.company.name}")
+    private String companyName;
+
+    @Value("${info.company.goal}")
+    private String companyGoal;
+
+    @Value("${info.company.email}")
+    private String companyEmail;
+
+    @Value("${info.company.phone}")
+    private String companyPhone;
+
+    public String getCompanyDetails() {
+        return companyName + ", " + companyEmail + ", " + companyPhone + " - " +
+                companyGoal;
+    }
 }
