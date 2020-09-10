@@ -32,7 +32,7 @@ public class SimpleEmailServiceTest {
         mailMessage.setText(mail.getMessage());
 
         //When
-        simpleEmailService.send(mail, true);
+        simpleEmailService.send(mail, false);
 
         //Then
         verify(javaMailSender, times(1)).send(any(MimeMessagePreparator.class));
