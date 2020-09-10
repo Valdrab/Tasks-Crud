@@ -25,13 +25,13 @@ public class EmailScheduler {
     @Scheduled(cron = "0 0 10 * * *")
     public void sendInformationEmail() {
         long size = taskRepository.count();
-        String oneOrMoreTasks = "task";
+        String oneOrMoreTasks = " task";
         if (size > 1) {
-            oneOrMoreTasks = "tasks";
+            oneOrMoreTasks = " tasks";
         }
         simpleEmailService.send(new Mail(
                 adminConfig.getAdminMail(), SUBJECT,
                 "You currently got " + size + oneOrMoreTasks + " in your database",
-                null));
+                null), true);
     }
 }

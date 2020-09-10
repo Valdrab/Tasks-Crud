@@ -25,4 +25,9 @@ public class Task {
         this.title = title;
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        return "Task: " + title;
+    }
 }

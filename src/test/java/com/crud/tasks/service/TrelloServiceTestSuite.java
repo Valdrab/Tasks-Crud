@@ -73,6 +73,6 @@ public class TrelloServiceTestSuite {
 
         //Then
         assertEquals("1", createdTrelloCardDtoTest.getId());
-        verify(emailService, times(1)).send(any());
+        verify(emailService, times(1)).send(any(), true);
     }
 }
